@@ -9,7 +9,7 @@ import { ComponentRef, useRef } from "react";
 export default function ClientComponent({
   accessToken,
 }: {
-  accessToken: string;
+  accessToken: string, selectedCase: string | null;
 }) {
   const timeout = useRef<number | null>(null);
   const ref = useRef<ComponentRef<typeof Messages> | null>(null);
@@ -38,6 +38,7 @@ export default function ClientComponent({
             }
           }, 200);
         }}
+        configId="76583dfc-b805-4c96-8397-113b3f24d55f"
       >
         <Messages ref={ref} />
         <Controls />

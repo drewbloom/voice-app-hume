@@ -49,6 +49,24 @@
   }
 }
 
+.p-tabmenuitem {
+  margin-right: 30px;
+  padding: 15px 0;
+}
+
+.p-menuitem-text {
+  font-size: larger;
+}
+
+.p-tabmenuitem.active-tab {
+  background-color: #D3D3D3;
+}
+
+.button-back {
+  background-color: #555555;
+}
+
+
 @layer base {
   * {
     @apply border-border font-sans;
