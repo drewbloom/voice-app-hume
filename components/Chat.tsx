@@ -7,9 +7,9 @@ import StartCall from "./StartCall";
 import { ComponentRef, useRef } from "react";
 
 export default function ClientComponent({
-  accessToken,
+  accessToken, updatedConfigVersion,
 }: {
-  accessToken: string, selectedCase: string | null;
+  accessToken: string, updatedConfigVersion: string;
 }) {
   const timeout = useRef<number | null>(null);
   const ref = useRef<ComponentRef<typeof Messages> | null>(null);
@@ -39,6 +39,7 @@ export default function ClientComponent({
           }, 200);
         }}
         configId="76583dfc-b805-4c96-8397-113b3f24d55f"
+        configVersion={updatedConfigVersion} // Hume API uses num, this says it wants it to be a string - made prop into string at updateConfig.tsx
       >
         <Messages ref={ref} />
         <Controls />

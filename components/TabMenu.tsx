@@ -16,6 +16,9 @@ export default function Menu({accessToken,} : {accessToken: string;}) {
     const [selectedCourse, setSelectedCourse] = useState<string | null>(null);
     const [selectedCase, setSelectedCase] = useState<string | null>(null);
     const [selectedInteraction, setSelectedInteraction] = useState<string | null>(null);
+    const [updatedConfigVersion, setUpdatedConfigVersion] = useState<string>(""); // Hume API ref says this is a number, but Chat component args call for string
+    const [loading, setLoading] = useState<boolean>(false); // load state for config updates to run between tab 3 and 4 (Chat initialization)
+    let caseTitle = "";
     const Chat = dynamic(() => import("@/components/Chat"), {
         ssr: false,
       });
@@ -43,26 +46,51 @@ export default function Menu({accessToken,} : {accessToken: string;}) {
             setActiveIndex((prevIndex) => Math.max(prevIndex - 1, 0));
             setSelectedCourse(null);
         } else {
-            setSelectedCourse(course);
+            setSelectedCourse(course); // tells tab2 which case list to feed
             setActiveIndex(1);
         }
     };
 
-    const handleSelectCase = (caseItem: string) => {
-        if (caseItem === "Back") {
+    const handleSelectCase = (caseTitle: string) => {
+        if (caseTitle === "Back") {
             setActiveIndex(0);
         } else {
-            setSelectedCase(caseItem); // will drive data injection into Chat prompt
+            setSelectedCase(caseTitle); // logic not written yet - will tell tab3 which interaction list to feed based on case title
             setActiveIndex(2);
         }
     };
 
-    const handleSelectInteraction = (interactionItem: string) => {
-        if (interactionItem === "Back") {
+    const handleSelectInteraction = (interactionType: string) => {
+        if (interactionType === "Back") {
             setActiveIndex(1);
         } else {
-            setSelectedInteraction(interactionItem);
-            setActiveIndex(3);
+            setSelectedInteraction(interactionType); // logic not written yet - recursion or second method like updateConfig adds interaction type to system prompt
+            // updateConfigInteraction to inject the scenario for Initial History, Differential Diagnosis Review, or Skill Practice
+            setLoading(true);
+            fetchUpdatedConfig();
+        }
+    };
+
+    const fetchUpdatedConfig = async() => {
+        if (selectedCase) {
+            try {
+                const response = await fetch('/api/getUpdatedConfig', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json'},
+                    body: JSON.stringify({caseTitle: selectedCase}),
+                });
+                if (!response.ok) {
+                    throw new Error("Failed to fetch updated config");
+                }
+
+                const data = await response.json();
+                setUpdatedConfigVersion(String(data.updatedConfigVersion));
+                setActiveIndex(3);
+            } catch (error) {
+                console.error("Error fetching updated configuration:", error);
+            } finally {
+                setLoading(false);
+            }
         }
     };
 
@@ -85,16 +113,21 @@ export default function Menu({accessToken,} : {accessToken: string;}) {
                 )}
 
                 {activeIndex === 2 && (
+                    loading ? (
+                        <div>Configuring your practice session now... get ready!</div>
+                    ) : (
                     <ThirdTab
                     selectedCase={selectedCase}
                     onSelectInteraction={handleSelectInteraction} />
+                    )
                 )}
 
                 {activeIndex === 3 && 
                     <Chat 
                     accessToken={accessToken}
-                    selectedCase={selectedCase}
-                />}
+                    updatedConfigVersion={updatedConfigVersion} // need to get API to fetch this server component
+                    />
+                }
             </div>
         </div>
     )

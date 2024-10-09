@@ -19,7 +19,7 @@ export default async function Page() {
     <div className="px-4 py-2 flex items-center bg-card">
       <Menu accessToken={accessToken} />
 
-      {/* Pulling Chat to experiment with nesting the component within a new Menu
+      {/* Pulling Chat to experiment with nesting the component within a new Menu - original logic is below
       <div className={"grow flex flex-col"}>
         <Chat accessToken={accessToken} />
       </div>

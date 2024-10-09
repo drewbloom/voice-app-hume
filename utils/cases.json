@@ -1,0 +1,142 @@
+[
+    {
+        "customized_data_object_for_test": "Has all necessary fields"
+    },
+    {
+        "case_title": "Geriatrics 15: 75-year-old male with abdominal pain",
+        "patient_dashboard": {"age": "75", "sex": "male", "gender": "male", "pronouns": "he-him-his", "language": "English"},
+        "case_synopsis": "Frank Lee Aiken is a 75-year-old male who presents to the emergency department with three days of worsening intermittent abdominal pain. His pain is accompanied by nausea and anorexia, but no vomiting. He has gone four days without a bowel movement. Over the last five months, he has unintentionally lost 15 pounds and experienced low-grade fatigue. Past history is remarkable for hypertension and Gold Stage II COPD and no previous surgeries. He is independent in ADLs but his son manages all his IADLs, and he walks slowly with a rolling walker for limited distances. His physical exam reveals diffuse tenderness without peritoneal signs. Further workup shows microcytic anemia, mild hyponatremia, and mildly increased creatinine. A CT scan shows an obstructing, left-sided colonic mass, enlarged regional lymph nodes, and nodules in the liver and left lung. He is taken to the operating room; the mass is resected and a loop colostomy is created. Postoperatively, he develops delirium due to acute urinary retention. After discharge, he is tried on two chemotherapy regimens but does not tolerate either. He ultimately opts for hospice at home and passes comfortably.",
+        "presenting_problem": "Pain-abdominal, Constipation",
+        "differential_diagnosis": "bowel obstruction, peptic ulcer disease, gastritis, cholecystitis, pancreatitis, constipation, diverticulitis, gallbladder disease, urinary tract infection, urinary retention, gastroenteritis, nonspecific abdominal pain",
+        "final_diagnosis": "Bowel obstruction, Cancer - colon"
+    },
+    {
+        "actual_api_object_*short_version": "Missing case synopsis, diff_diag"
+    },
+    {
+        "id": 223,
+        "edit_version_id": 52268,
+        "publish_version_id": 52267,
+        "title": "Geriatrics 15: 75-year-old male with abdominal pain",
+        "description": "",
+        "storage_key": "webGEMs-6.1-VDF0gyTT2HYe9wJhP-m2B1M9P3SU9lkvhs8spWbOykgPGW5xTzc",
+        "updated_at": "2024-10-08T00:01:03.847-04:00",
+        "version_counter": 44,
+        "description_version_counter": 5,
+        "scheduled_review_version_id": 6494,
+        "author": "Preston Seaberg and Amit Shah, MD.",
+        "final_diagnoses": [
+            "Bowel obstruction",
+            "Cancer - colon"
+        ],
+        "clinical_locations": [
+            "Inpatient/hospital",
+            "Emergency department",
+            "Home visit"
+        ],
+        "clinical_disciplines": [
+            "Emergency Medicine",
+            "Geriatrics"
+        ],
+        "systems": [
+            "Gastrointestinal"
+        ],
+        "presenting_problems": [
+            "Pain - abdominal",
+            "Constipation"
+        ],
+        "additional_diagnoses": [
+            "Urinary retention",
+            "Pancreatitis",
+            "Gastroesophageal reflux disease"
+        ],
+        "clinical_focuses": [
+            "Diagnosis",
+            "Management"
+        ],
+        "kind": "signature_case",
+        "last_release_date": "2024-04-16T20:00:00.000-04:00",
+        "last_release_notes": "<div class='point'>\n  <h3>April 17, 2024</h3>\n  <ul>\n  <li>\n  <p>\n  This case was reviewed and updated by the Aquifer Geriatrics Course Board.\n</p>\n\n</li>\n\n</ul>\n\n</div>\n\n<div class='point'>\n  <h3>January 16, 2023</h3>\n  <ul>\n  <li>\n  <p>\n  Added a Palliative Care integration.\n</p>\n\n</li>\n\n</ul>\n\n</div>\n",
+        "update_banner_date": "2024-04-17T19:33:27.611-04:00",
+        "basic_science_disciplines": [],
+        "report_title": null,
+        "editor": null,
+        "age_groups": [
+            "Older Adult / Elderly (65+ years)"
+        ],
+        "possible_prerequisite": false,
+        "prerequisite_document_id": null,
+        "clinical_excellence": [
+            "Palliative Care"
+        ],
+        "new_banner_date": null,
+        "cover_image": "https://medu-relier-production.s3.amazonaws.com/files/webGEMs-6.1-VDF0gyTT2HYe9wJhP-m2B1M9P3SU9lkvhs8spWbOykgPGW5xTzc/published/cover.jpg",
+        "json_version": "7.0.0",
+        "learning_objectives": [
+            {
+                "id": 1464,
+                "name": "List ways in which older adults with acute abdominal pathology present differently than younger adults.",
+                "uid": "f7901f26-61db-44e4-a913-c6e6b0b5a7c7",
+                "created_at": "2022-12-09T05:26:56.591-05:00",
+                "updated_at": "2024-04-17T06:51:52.146-04:00",
+                "publish_variant_id": 23271,
+                "review_variant_id": 23272,
+                "maintenance_variant_id": 23273
+            },
+            {
+                "id": 1465,
+                "name": "Identify common reasons for abdominal discomfort, and generate a differential diagnosis for older adults with acute abdominal symptoms.",
+                "uid": "a50a55ef-bca6-4ca7-8992-9dad6c725736",
+                "created_at": "2022-12-09T05:26:56.603-05:00",
+                "updated_at": "2024-04-17T06:51:52.180-04:00",
+                "publish_variant_id": 23274,
+                "review_variant_id": 23275,
+                "maintenance_variant_id": 23276
+            },
+            {
+                "id": 1466,
+                "name": "Describe the potential impact of frailty and/or decreased functional status on an older adult’s surgical prognosis.",
+                "uid": "14ea6c91-db0f-412a-bc0f-934ceb48e4d5",
+                "created_at": "2022-12-09T05:26:56.616-05:00",
+                "updated_at": "2024-04-17T06:51:52.214-04:00",
+                "publish_variant_id": 23277,
+                "review_variant_id": 23278,
+                "maintenance_variant_id": 23279
+            },
+            {
+                "id": 1467,
+                "name": "Identify common perioperative considerations for an older adult undergoing abdominal surgery.",
+                "uid": "95f22807-d00c-4958-9024-a6ec1a8bcb0f",
+                "created_at": "2022-12-09T05:26:56.629-05:00",
+                "updated_at": "2024-04-17T06:51:52.251-04:00",
+                "publish_variant_id": 23280,
+                "review_variant_id": 23281,
+                "maintenance_variant_id": 23282
+            },
+            {
+                "id": 1468,
+                "name": "Describe the SPIKES approach for giving a patient bad news.",
+                "uid": "f5dd118d-51a4-40db-a4e5-04842e5dd29e",
+                "created_at": "2022-12-09T05:26:56.642-05:00",
+                "updated_at": "2024-04-17T06:51:52.286-04:00",
+                "publish_variant_id": 23283,
+                "review_variant_id": 23284,
+                "maintenance_variant_id": 23285
+            },
+            {
+                "id": 2193,
+                "name": "Demonstrate a structured approach to delivering serious news to patients and families.",
+                "uid": "8e4a2ac4-7151-45ce-af8b-f2b2aa162935",
+                "created_at": "2022-12-21T18:30:52.487-05:00",
+                "updated_at": "2024-04-17T06:51:52.322-04:00",
+                "publish_variant_id": 23286,
+                "review_variant_id": 23287,
+                "maintenance_variant_id": 23288
+            }
+        ],
+        "sync_counter": 1726504523,
+        "avg_time": "0:22 H:MM",
+        "recommended_time": "34 min",
+        "case_summary_url": "/documents/223/case_summary.pdf"
+    }
+]
